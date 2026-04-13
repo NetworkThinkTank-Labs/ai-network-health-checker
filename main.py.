@@ -1,0 +1,50 @@
+"""
+main.py
+AI Network Health Checker - Main entry point.
+
+Usage:
+    python main.py          # Run with real devices
+        python main.py --demo   # Run with simulated data
+        """
+
+        import argparse
+        from network_collector import load_devices, collect_all_devices, generate_demo_data
+        from anomaly_detector import detect_anomalies, print_results
+
+
+        def main():
+            parser = argparse.ArgumentParser(description="AI Network Health Checker")
+                parser.add_argument("--demo", action="store_true", help="Use simulated demo data.")
+                    parser.add_argument("--contamination", type=float, default=0.1,
+                                            help="Expected anomaly proportion (default: 0.1).")
+                                                args = parser.parse_args()
+
+                                                    print("=" * 60)
+                                                        print("  AI Network Health Checker")
+                                                            print("=" * 60)
+
+                                                                if args.demo:
+                                                                        print("\n[Demo Mode] Using simulated data...\n")
+                                                                                interface_stats = generate_demo_data()
+                                                                                        print(f"  -> Generated {len(interface_stats)} simulated records.\n")
+                                                                                            else:
+                                                                                                    print("\nCollecting data from devices...\n")
+                                                                                                            try:
+                                                                                                                        devices = load_devices("devices.json")
+                                                                                                                                except FileNotFoundError:
+                                                                                                                                            print("  x devices.json not found. Use --demo mode.")
+                                                                                                                                                        return
+                                                                                                                                                                interface_stats = collect_all_devices(devices)
+                                                                                                                                                                        if not interface_stats:
+                                                                                                                                                                                    print("  x No data collected.")
+                                                                                                                                                                                                return
+                                                                                                                                                                                                
+                                                                                                                                                                                                    print("Running anomaly detection (Isolation Forest)...\n")
+                                                                                                                                                                                                        results = detect_anomalies(interface_stats, contamination=args.contamination)
+                                                                                                                                                                                                            print_results(results)
+                                                                                                                                                                                                                print(f"\nDone. Analyzed {len(results)} interfaces.")
+                                                                                                                                                                                                                    print("=" * 60)
+                                                                                                                                                                                                                    
+                                                                                                                                                                                                                    
+                                                                                                                                                                                                                    if __name__ == "__main__":
+                                                                                                                                                                                                                        main()

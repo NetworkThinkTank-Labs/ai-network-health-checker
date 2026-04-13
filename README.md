@@ -2,7 +2,7 @@
 
 An AI-powered network health monitoring tool using **Python**, **Netmiko** for network device data collection, and **scikit-learn's Isolation Forest** for anomaly detection. Beginner-friendly project for network engineers.
 
-Blog Post: [How I Built an AI Network Monitoring Tool (Beginner Friendly)](https://networkthinktank.blog/2025/04/13/how-i-built-an-ai-network-monitoring-tool-beginner-friendly/)
+Blog Post: [How I Built an AI Network Monitoring Tool (Beginner Friendly)](https://networkthinktank.blog/2026/04/13/how-i-built-an-ai-network-monitoring-tool-beginner-friendly/)
 
 ---
 
@@ -133,7 +133,7 @@ Blog Post: [How I Built an AI Network Monitoring Tool (Beginner Friendly)](https
 
                                 ## Resources
 
-                                - [Blog Post](https://networkthinktank.blog/2025/04/13/how-i-built-an-ai-network-monitoring-tool-beginner-friendly/)
+                                - [Blog Post](https://networkthinktank.blog/2026/04/13/how-i-built-an-ai-network-monitoring-tool-beginner-friendly/)
                                 - - [Netmiko Documentation](https://github.com/ktbyers/netmiko)
                                   - - [scikit-learn Isolation Forest](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.IsolationForest.html)
                                     - - [NetworkThinkTank-Labs GitHub](https://github.com/NetworkThinkTank-Labs)
